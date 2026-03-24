@@ -23,6 +23,8 @@ public class ProductService {
         //print message
         System.out.println("Adding product: " + productDTO.getName());
 
+        System.out.println("Adding product: " + productDTO.getPrice());
+
         // Validation
         if (productDTO.getPrice() <= 0) {
             throw new IllegalArgumentException("Price must be greater than 0");
