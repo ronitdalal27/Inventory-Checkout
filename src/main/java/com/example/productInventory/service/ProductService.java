@@ -23,6 +23,8 @@ public class ProductService {
         //print message
         System.out.println("master change");
 
+        System.out.println("cart-service change");
+
         // Validation
         if (productDTO.getPrice() <= 0) {
             throw new IllegalArgumentException("Price must be greater than 0");
