@@ -41,3 +41,15 @@ public class CartService {
         cart.clear();
     }
 }
+
+
+/*
+    git branch - to check on which branch you are on currently
+    to switch the branch - git checkout branch_name
+
+    now suppose we want to implement product validation feature so we will cut a branch from this commited work i.e. copy
+    git checkout -b feature/product-validation
+    this branch will get created and then we will switch to this created branch automatically(feature/product-inventory)
+
+
+ */
