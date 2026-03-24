@@ -51,5 +51,16 @@ public class CartService {
     git checkout -b feature/product-validation
     this branch will get created and then we will switch to this created branch automatically(feature/product-inventory)
 
+    once you create a specific branch suppose feature/product-validation
+    then u first need to git add ., git commit -m "message", then git push origin feature/product-validation then created feature branch is uptodate
+    then if once feature is completed so we can merge this created branch with main/master branch
+
+    to do this first u need to
+    git checkout master - switch to master/main branch i.e. with which branch u need to merge this feature branch, so we want to merge with main/master branch
+    option 1 to merge - dirct option
+    git merge feature/product-validation(branch-name) now master branch has all the code of feautre/product-validation branch
+
+    now we create merge-conflict
+
 
  */
