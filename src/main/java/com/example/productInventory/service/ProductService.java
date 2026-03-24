@@ -21,7 +21,7 @@ public class ProductService {
     public ProductDTO addProduct(ProductDTO productDTO) {
 
         //print message
-        System.out.println("feature of test-conflict branch");
+        System.out.println("feature of master branch");
 
         // Validation
         if (productDTO.getPrice() <= 0) {
