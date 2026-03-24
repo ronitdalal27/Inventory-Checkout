@@ -21,7 +21,7 @@ public class ProductService {
     public ProductDTO addProduct(ProductDTO productDTO) {
 
         //print message
-        System.out.println("feature of master branch");
+        System.out.println("master change");
 
         // Validation
         if (productDTO.getPrice() <= 0) {
