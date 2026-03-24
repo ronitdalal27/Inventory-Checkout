@@ -44,23 +44,41 @@ public class CartService {
 
 
 /*
-    git branch - to check on which branch you are on currently
-    to switch the branch - git checkout branch_name
+    git branch - shows all branch
+                * shows current branch
 
-    now suppose we want to implement product validation feature so we will cut a branch from this commited work i.e. copy
+    to switch branch - git checkout branch_name
+    for eg git checkout feature/cart-service
+
+    to create new branch
     git checkout -b feature/product-validation
-    this branch will get created and then we will switch to this created branch automatically(feature/product-inventory)
+    this will create new branch and switch to it, now as we make changes in this code we do git add . and then commit
+    and then push - git push origin feature/product-validation
+    now this branch is available on github
 
-    once you create a specific branch suppose feature/product-validation
-    then u first need to git add ., git commit -m "message", then git push origin feature/product-validation then created feature branch is uptodate
-    then if once feature is completed so we can merge this created branch with main/master branch
+    merge branch -
+    always merge features into main branch
+    therefore switch to main branch - git checkout main
+    then do -  git merge feature/product-validation
+    now our main branch has feature branch code
 
-    to do this first u need to
-    git checkout master - switch to master/main branch i.e. with which branch u need to merge this feature branch, so we want to merge with main/master branch
-    option 1 to merge - dirct option
-    git merge feature/product-validation(branch-name) now master branch has all the code of feautre/product-validation branch
+    what is merge conflict ?
+    when changes in same line, same file, changes from both branches occures
+    so we need to raise the pr manually and then see what to accep and what to not so we can see at that time
 
-    now we create merge-conflict
+    if our master branch is updated, but feature branch does not have that code so
+    1st option - git checkout feature/product-validation
+                 git merge main
+    2nd option(preferred) - git checkout feature/product-validation
+                            git rebase main
+
+    to delete branch - git branch -d feature/product-validation
+
+
+
+
+
+
 
 
  */
