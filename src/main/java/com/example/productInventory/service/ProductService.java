@@ -17,19 +17,41 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final ModelMapper modelMapper;
 
-    // add product
+    //add product
     public ProductDTO addProduct(ProductDTO productDTO) {
-        if(productDTO.getPrice() <= 0){
+
+        // Validation
+        if (productDTO.getPrice() <= 0) {
             throw new IllegalArgumentException("Price must be greater than 0");
         }
 
-        // DTO to Entity
-        Product product = modelMapper.map(productDTO, Product.class);
+        if (productDTO.getName() == null || productDTO.getName().trim().isEmpty()) {
+            throw new IllegalArgumentException("Product name cannot be empty");
+        }
 
-        // Save to DB
+        // Normalize name (IMPORTANT)
+        String normalizedName = productDTO.getName().toLowerCase().trim();
+
+        // Check if product already exists
+        Product existingProduct = productRepository
+                .findByName(normalizedName)
+                .orElse(null);
+
+        if (existingProduct != null) {
+            // Update existing product price
+            existingProduct.setPrice(productDTO.getPrice());
+
+            Product updatedProduct = productRepository.save(existingProduct);
+
+            return modelMapper.map(updatedProduct, ProductDTO.class);
+        }
+
+        // Create new product
+        Product product = modelMapper.map(productDTO, Product.class);
+        product.setName(normalizedName);
+
         Product savedProduct = productRepository.save(product);
 
-        // Entity to DTO
         return modelMapper.map(savedProduct, ProductDTO.class);
     }
 

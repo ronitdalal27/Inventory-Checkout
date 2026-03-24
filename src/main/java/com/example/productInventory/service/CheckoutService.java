@@ -43,7 +43,7 @@ public class CheckoutService {
                     .orElseThrow(() -> new InventoryNotFoundException("Inventory not found with id " + productId));
 
             if (inventory.getQuantity() < qty) {
-                throw new OutOfStockException(product.getName() + " is out of stock . Available qty is " + qty);
+                throw new OutOfStockException(product.getName() + " is out of stock . Available qty is " + inventory.getQuantity());
             }
 
             inventory.setQuantity(inventory.getQuantity() - qty);
