@@ -21,9 +21,7 @@ public class ProductService {
     public ProductDTO addProduct(ProductDTO productDTO) {
 
         //print message
-        System.out.println("Adding product: " + productDTO.getName());
-
-        System.out.println("Adding product: " + productDTO.getPrice());
+        System.out.println("feature of main branch");
 
         // Validation
         if (productDTO.getPrice() <= 0) {
