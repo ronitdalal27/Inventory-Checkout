@@ -20,6 +20,9 @@ public class CartService {
 
     public Map<Integer, Integer> addToCart(CartDTO dto) {
 
+        //just to add extra feature in cart-improvement feature
+        System.out.println(dto.toString());
+
         if(dto.getQuantity() <= 0) {
             throw new IllegalArgumentException("Invalid quantity, Quantity should be greater than 0");
         }
