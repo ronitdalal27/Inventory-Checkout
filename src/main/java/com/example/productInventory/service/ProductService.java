@@ -34,7 +34,7 @@ public class ProductService {
             throw new IllegalArgumentException("Product name cannot be empty");
         }
 
-        // Normalize name (IMPORTANT)
+        // Normalize name
         String normalizedName = productDTO.getName().toLowerCase().trim();
 
         // Check if product already exists

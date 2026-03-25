@@ -13,7 +13,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class CartService {
 
-    // ✅ Use productId instead of Product object
+    // Use productId instead of Product object
     private final Map<Integer, Integer> cart = new HashMap<>();
 
     private final ProductRepository productRepository;

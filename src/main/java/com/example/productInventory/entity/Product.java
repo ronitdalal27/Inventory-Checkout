@@ -18,5 +18,6 @@ public class Product {
 
     @Column(unique = true)
     private String name;
+
     private int price;
 }
