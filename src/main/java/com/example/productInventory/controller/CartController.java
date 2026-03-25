@@ -21,7 +21,7 @@ public class CartController {
     }
 
     @GetMapping
-    public Map<?, ?> viewCart() {
+    public Map<Integer, Integer> viewCart() {
         return cartService.viewCart();
     }
 }
